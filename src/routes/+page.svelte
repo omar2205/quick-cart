@@ -2,7 +2,7 @@
   import CreateAccount from '$lib/components/CreateAccount.svelte'
   import { createUser } from '$lib/auth'
   import { user } from '$lib/client/userstore'
-  import UserCartLists from '$lib/components/UserCartLists.svelte'
+  import UserCartLists from '$lib/components/UserCartList.svelte'
 
   const handle_signin = (e: CustomEvent<'google' | 'github'>) => {
     createUser(e.detail)

@@ -5,7 +5,6 @@
   import { user } from '$lib/client/userstore'
 
   onAuthStateChanged(auth, (user) => {
-    console.log('state changed', { user })
     if (user) $user = user
   })
 </script>
