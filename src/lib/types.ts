@@ -1,6 +1,8 @@
 import type { UserInfo } from 'firebase/auth'
+import type { Timestamp } from 'firebase/firestore'
 
 export type user_type = User | UserInfo | string
+type date_firestore = Date | Timestamp
 
 export interface User {
   id?: string
@@ -13,7 +15,7 @@ export interface Cart {
   id?: string
 
   title: string
-  date: Date
+  date: date_firestore
 
   author_id: user_type
   users: user_type[]
@@ -27,8 +29,8 @@ export interface Item {
   name: string
 
   added_by: string
-  added_on: Date
+  added_on: date_firestore
 
   picked_up_by: user_type | null
-  picked_up_date: Date | null
+  picked_up_date: date_firestore | null
 }
