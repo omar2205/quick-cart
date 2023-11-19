@@ -5,7 +5,7 @@ import { auth } from './firebase'
 export const googleProvider = new GoogleAuthProvider()
 
 export async function createUser(type: 'google' | 'github' = 'google') {
-  signInWithPopup(auth, googleProvider)
+  return signInWithPopup(auth, googleProvider)
     .then((res) => {
       console.log('res', res)
       const creds = GoogleAuthProvider.credentialFromResult(res)
@@ -17,6 +17,7 @@ export async function createUser(type: 'google' | 'github' = 'google') {
           method: 'POST',
           body: JSON.stringify({ id_token }),
         })
+        return res.user
       })
     })
     .catch((err) => {
