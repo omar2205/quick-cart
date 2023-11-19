@@ -10,7 +10,7 @@ import { getFirestore } from 'firebase/firestore'
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: 'AIzaSyC7ag26jVLc3i-M1tEtlVDSACsbRRqhl9w',
   authDomain: 'my-quick-cart.firebaseapp.com',
   projectId: 'my-quick-cart',
