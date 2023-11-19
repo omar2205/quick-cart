@@ -17,6 +17,7 @@ export interface Cart {
   title: string
   date: date_firestore
 
+  author?: user_type
   author_id: user_type
   users: user_type[]
 

@@ -25,6 +25,7 @@ const auth = getAuth(app)
 
 const db = getFirestore(app)
 
-setPersistence(auth, browserSessionPersistence)
+// setPersistence(auth, browserSessionPersistence)
+setPersistence(auth, {type: 'NONE'})
 
 export { app, auth, db }

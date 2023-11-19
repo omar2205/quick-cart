@@ -11,6 +11,13 @@ export async function createUser(type: 'google' | 'github' = 'google') {
       const creds = GoogleAuthProvider.credentialFromResult(res)
       const token = creds?.accessToken
       if ('user' in res) user.set(res.user)
+
+      return res.user.getIdToken().then((id_token) => {
+        fetch('/api/auth', {
+          method: 'POST',
+          body: JSON.stringify({ id_token }),
+        })
+      })
     })
     .catch((err) => {
       const error_code = err.code
